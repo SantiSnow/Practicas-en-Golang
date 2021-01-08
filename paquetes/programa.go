@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"math"
 	"os"
@@ -22,4 +23,25 @@ func main() {
 		fmt.Println(scanner.Text())
 		fmt.Println(scanner.Bytes())
 	}
+
+	creacionArchivos()
+}
+
+func creacionArchivos() {
+	saludo := []byte("Hola, esto fue creado con Go")
+
+	err := ioutil.WriteFile("test.txt", saludo, 0644)
+
+	if err != nil {
+		panic(err)
+	}
+
+	//leer el archivo
+	datos, err := ioutil.ReadFile("test.txt")
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("El archivo contiene: " + string(datos))
 }
