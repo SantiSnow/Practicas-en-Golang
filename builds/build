@@ -1,0 +1,31 @@
+comandos:
+
+Go build:
+-Compila en .exe el archivo .go que este en la carpeta
+-Si hay muchos archivos en el directorio, pero deseamos compilar solo uno de ellos, debemos anexar el nombre del archivo después de go build
+-go build ignora archivos cuyos nombres empiezan con _ o .. (Buena práctica para dependencias)
+-Si el paquete no es el paquete principal main, no se compilara nada
+
+
+Go clean
+-se usa para limpiar luego de compilar
+-util antes de subir a repositorio
+
+
+Go fmt
+-da formato al codigo
+
+
+Go get
+-permite obtener paquetes remotos
+-soporta Github, BitBucket, Google Code y Launchpad
+-Luego de descargar se ejecuta go install
+
+
+Go install
+-Compila todos los paquetes y los mueve a bin
+
+
+Go test
+-genera archivos de testeo a todos los *_test.go
+
